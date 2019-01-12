@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef unsigned long long ull;
+
+ull a[16];
+
+int main(){
+    a[0]=4;
+    ull b; cin>>b;
+    for(ull i=1; i<=b; i++){
+        a[i]=a[i-1]+i*(3*i+2);
+    } cout<<a[b];
+    return 0;
+}
