@@ -6,3 +6,6 @@
 # ignore .o, .exe
 *.o
 *.exe
+
+# ignore .class
+*.class
