@@ -3,5 +3,6 @@
 !*/
 !*.*
 
-# ignore .o
+# ignore .o, .exe
 *.o
+*.exe
