@@ -1,0 +1,7 @@
+# ignore extensionless files
+*
+!*/
+!*.*
+
+# ignore .o
+*.o
