@@ -9,3 +9,9 @@
 
 # ignore .class
 *.class
+
+# ignore login files
+.*
+
+# but not gitignore
+!/.gitignore
