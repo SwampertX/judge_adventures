@@ -15,3 +15,6 @@
 
 # but not gitignore
 !/.gitignore
+
+# rust
+**/target/
