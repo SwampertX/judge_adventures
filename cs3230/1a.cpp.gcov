@@ -1,0 +1,50 @@
+        -:    0:Source:1a.cpp
+        -:    0:Graph:1a.gcno
+        -:    0:Data:1a.gcda
+        -:    0:Runs:1
+        -:    1:#include <bits/stdc++.h>
+        -:    2:using namespace std;
+        -:    3:
+        -:    4:typedef unsigned long long ull;
+        -:    5:typedef long long ll;
+        -:    6:typedef pair<int, int> ii;
+        -:    7:
+        -:    8:const int INF = 2e9;
+        -:    9:const int MOD = 10000007;
+        -:   10:
+        -:   11:int R, H;
+        -:   12:string days;
+        -:   13:unordered_map<int, unordered_map<int, int>> dp;
+        -:   14:
+ 31484047:   15:int f(int r, int h) {
+        -:   16:  //  cout << r << ' ' << h << endl;
+ 31484047:   17:  if (h > H)
+   149091:   18:    return 0;
+ 31334956:   19:  if (r <= 0)
+    49991:   20:    return -INF;
+        -:   21:  //if (r * r > h) {
+        -:   22:  //    return f(sqrt(h) + 1, r);
+        -:   23:  //}
+        -:   24:  //if (h > r * r && r > 1) {
+        -:   25:  //    return -INF;
+        -:   26:  //}
+ 31284965:   27:  if (dp[r].find(h) == dp[r].end()) {
+        -:   28:      /*if (r==1) {
+        -:   29:          dp[r][h] = f(r, h + r);
+        -:   30:      } else if (r==2){
+        -:   31:          dp[r][h] = f(r-1, h + r-1);
+        -:   32:      } else {*/
+ 10494682:   33:          dp[r][h] = max(max(f(r - 1, h + r - 1), f(r, h + r)), f(r + 1, h + r + 1));
+        -:   34:      //}
+ 10494682:   35:    if (days[h - 1] == 's')
+  5245612:   36:      dp[r][h]++;
+        -:   37:  }
+        -:   38:  //  cout << dp[r][h] << endl;
+ 31284965:   39:  return dp[r][h];
+        -:   40:}
+        -:   41:
+        1:   42:int main() {
+        1:   43:  cin >> R >> H;
+        1:   44:  cin >> days;
+        1:   45:  cout << f(R, 0) << endl;
+        1:   46:}
